@@ -1,0 +1,99 @@
+body {
+  margin: 20px 20px 40px;
+  font-family: Helvetica;
+}
+
+.portifolio-header {
+  position: relative; /* Allow child elements to be positioned relatively to the parent (https://developer.mozilla.org/en/docs/Web/CSS/position) */
+  border-bottom: 2px solid deepskyblue;
+  min-height: 120px;
+  margin-bottom: 20px;
+}
+
+.portifolio-header > .logo {
+  position: absolute; /* Position the title element absolutely in relation to it's parent (https://developer.mozilla.org/en/docs/Web/CSS/position) */
+  left: 0; /* Absolute position: 0 px from the left of the parent */
+  margin: 15px 30px;
+}
+
+/* On mobile L and smaller, center the logo */
+@media (max-width: 425px) {
+  .portifolio-header > .logo {
+    display: block;
+    position: static;
+    text-align: center;
+  }
+}
+
+.portifolio-header > .title {
+  position: static; /* Position the title element normaly, aligned to the right */
+  text-align: right;
+}
+
+/* On mobile L and smaller, center the title text */
+@media (max-width: 425px) {
+  .portifolio-header > .title {
+    text-align: center;
+  }
+}
+
+.portifolio-header > .title > h1 {
+  color: darkslategray;
+}
+
+.portifolio-header > .title > h2 {
+  color: lightslategray;
+}
+
+.banner {
+  background-image: url("../img/stone-tablet.jpg");
+  height: 350px;
+}
+
+.featured-gallery {
+  margin-top: 50px;
+}
+
+.featured-gallery > h2 {
+  color: darkslategray;
+  font-size: 24px;
+}
+
+.featured-gallery-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.featured-gallery-items > .featured-item {
+  width: 33%; /* Split the available space between the 3 items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* On tablet and smaller, display one item per row */ 
+@media (max-width: 768px) {
+  .featured-gallery-items > .featured-item {
+    width: 100%;
+  }
+}
+
+.featured-gallery-items > .featured-item > .featured-item-img {
+  height: 191px;
+  max-width: 375px;
+  overflow: hidden; /* If the image is bigger than the available space, crop the image */
+  padding: 20px;
+}
+
+/* On mobile L and smaller, display a smaller image */
+@media (max-width: 425px) {
+  .featured-gallery-items > .featured-item > .featured-item-img {
+    height: 136px;
+  }
+}
+
+.featured-gallery-items > .featured-item > .featured-item-img > img {
+  width: 100%; /* Resize the image to occupy all the width */
+}
